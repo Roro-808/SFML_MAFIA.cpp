@@ -73,3 +73,6 @@ Testing/
 
 # dll files of SFML
 *.dll
+
+# It will be created automaticly
+log.txt

@@ -3,7 +3,7 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include <string>
-#include "functions/func.cpp"
+#include "functions/Scenes.cpp"
 
 using namespace sf;
 
@@ -13,16 +13,13 @@ int main() {
 
     RenderWindow window(VideoMode::getDesktopMode(), "MAFIA", Style::Fullscreen);
 
-    Vector2u scrBorders = window.getSize();
-    int scrBorder[2] = {(int)scrBorders.x, (int)scrBorders.y};
-    Text MainText;
-    MainText.Bold;
-    MainText.setPosition(Vector2f(scrBorder[0]/2,scrBorder[1]/2));
+    MainScreen mainScreen;
+    mainScreen.init();
     
-    PlayMusic("assets/music/01.Title Screen.mp3");
+    enum stste {MENU, ServerChoose};
+    stste Curr_state = MENU;
 
     while (window.isOpen()) {
-        bool fullscreen = true;
         Event event;
         while (window.pollEvent(event)) {
             if (event.type == Event::Closed)
@@ -40,6 +37,21 @@ int main() {
                 logFile<<"Нажата кнопка мыши:"<<event.mouseButton.button<<std::endl;
             }
         }
+
+        if (Curr_state == MENU) {
+            mainScreen.update(window);
+            int action = mainScreen.handleEvents(window);
+            if (action == 1) {
+                Curr_state = ServerChoose;
+                
+            }
+            window.clear(Color::Black);
+            mainScreen.draw(window);
+        }
+        else if (Curr_state == ServerChoose) {
+            
+        }
+        
         window.display();
     }
     

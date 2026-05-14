@@ -1,9 +1,9 @@
-# MAFIA game on C++ library SFML
+# Игра МАФИЯ на C++ библиотеке SFML
 
-My first big project on c++ I guess
+Мой первый крупный проект на C++
 
-### Attention! I haven't included SFML files in this project, please add it by yourself if you want to play the game! Version 2.6.2
+### Внимание! В этот проект не включены файлы SFML, пожалуйста, добавьте их самостоятельно, если хотите играть в игру! Версия 2.6.2
 
-### Every music and sound is not mine and if you want to get it removed (due to the copyright), please contact me in comments.
+### Вся музыка и звуки не мои, и если вы хотите, чтобы они были удалены (из-за авторских прав), пожалуйста, свяжитесь со мной в комментариях.
 
-### Game.exe file is not included because your build might be diffrent
+### Файл Game.exe не включен, так как ваша сборка может отличаться.
